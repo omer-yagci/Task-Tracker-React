@@ -10,12 +10,13 @@ function App() {
   const toggleTaskBar = () => {
     setIsClicked(!isClicked);
   };
-  useEffect(() => {
-    setData();
-    return () => setData();
-  }, []);
+  // useEffect(() => {
+  //   setData(data);
+  // }, [data]);
   const addTasks = (taskFromAddTask) => {
-    setData(taskFromAddTask);
+    setData((prevTask) => {
+      return [taskFromAddTask, ...prevTask];
+    });
   };
   return (
     <div className="main">

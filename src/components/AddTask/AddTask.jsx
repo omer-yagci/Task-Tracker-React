@@ -12,9 +12,9 @@ const AddTask = ({ isClicked, addTasks }) => {
   };
 
   return (
-    <>
+    <div className={classes.container}>
       {isClicked && (
-        <form className={classes.container} onSubmit={submitHandler}>
+        <form className={classes.form} onSubmit={submitHandler}>
           <label className={classes.label} htmlFor="task">
             Task
           </label>
@@ -41,7 +41,7 @@ const AddTask = ({ isClicked, addTasks }) => {
           <button>Save Task</button>
         </form>
       )}
-    </>
+    </div>
   );
 };
 
