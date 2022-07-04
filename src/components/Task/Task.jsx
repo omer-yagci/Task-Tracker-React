@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../../scss/task.module.scss";
 
 const Task = ({ task, dayTime }) => {
-  console.log(task);
+  const [isDone, setIsDone] = useState(false);
+  const clickHandler = () => {
+    setIsDone(!isDone);
+  };
+
   return (
     <>
-      <li>
-        <p className={classes.task}>
+      <li onClick={clickHandler}>
+        <p
+          className={classes.task}
+          style={{ textDecoration: isDone ? "line-through" : "none" }}
+        >
           {task} <br /> {dayTime}
         </p>
       </li>

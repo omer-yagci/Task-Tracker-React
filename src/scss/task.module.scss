@@ -1,4 +1,9 @@
-p:hover {
-  color: red;
-  font-style: italic;
+p {
+  width: 100%;
+  &:hover {
+    color: red;
+    font-style: italic;
+    cursor: pointer;
+    font-size: 1rem;
+  }
 }
