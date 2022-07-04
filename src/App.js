@@ -18,11 +18,18 @@ function App() {
       return [taskFromAddTask, ...prevTask];
     });
   };
+  const deleteTask = (id) => {
+    setData((prevTask) => {
+      return prevTask.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  };
   return (
     <div className="main">
       <Header toggleTaskBar={toggleTaskBar} isClicked={isClicked} />
       <AddTask isClicked={isClicked} addTasks={addTasks} />
-      <Tasks addTasks={addTasks} data={data} />
+      <Tasks addTasks={addTasks} data={data} deleteTask={deleteTask} />
     </div>
   );
 }
