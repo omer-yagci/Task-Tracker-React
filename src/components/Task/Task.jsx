@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import classes from "../../scss/task.module.scss";
 import { AiFillDelete } from "react-icons/ai";
 
-const Task = ({ task, dayTime, deleteTask, id }) => {
-  const [isDone, setIsDone] = useState(false);
-  const clickHandler = () => {
-    setIsDone(!isDone);
-  };
+const Task = ({ task, dayTime, deleteTask, id, isDone, isDoneFunction }) => {
+  // const [isDone, setIsDone] = useState(false);
+  // const clickHandler = () => {
+  //   isDoneFunction();
+  // };
 
   return (
     <>
-      <li onClick={clickHandler}>
+      <li>
         <p
+          onClick={() => isDoneFunction()}
           className={classes.task}
           style={{ textDecoration: isDone ? "line-through" : "none" }}
         >
